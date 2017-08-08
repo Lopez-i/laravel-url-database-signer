@@ -17,19 +17,18 @@ class UrlDatabaseSignerServiceProvider extends ServiceProvider
             $source_config = __DIR__.'/config/url-database-signer.php';
             $source_db = __DIR__.'/Migration/2017_07_22_144134_create_signed_urls_table.php';
             $source_middleware = __DIR__.'/Middleware/ValidateUrlDatabaseSignature.php';
+            $source_job = __DIR__.'/Jobs/RemoveExpiredSignedUrl.php';
+
+            File::makeDirectory(base_path('./app/Jobs', 0775));
             $this->publishes(
                 [
                     $source_config => config_path('url-database-signer.php'),
-                ]);
-            $this->publishes(
-                [
                     $source_db => base_path('./database/migrations/2017_07_22_144134_create_signed_urls_table.php'),
+                    $source_middleware => base_path('./app/Http/Middleware/ValidateUrlDatabaseSignature.php'),
+                    $source_job => base_path('./app/Jobs/RemoveExpiredSignedUrl.php')
                 ]);
-            $this->publishes(
-                [
-                    $source_middleware => base_path('./app/Http/Middleware/ValidateUrlDatabaseSignature.php')
-                ]);
-            $this->mergeConfigFrom($source_config, 'url-database-signer.php');
+
+            $this->mergeConfigFrom($source_config, 'url-database-signer');
         }
     }
 }
