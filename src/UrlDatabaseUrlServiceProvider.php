@@ -4,8 +4,6 @@ namespace lopez_i\UrlSigner;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Foundation\Application;
-use Spatie\UrlSigner\UrlSigner as UrlSignerContract;
-use Spatie\UrlSigner\Laravel\Middleware\ValidateSignature;
 
 class UrlSignerServiceProvider extends ServiceProvider
 {
