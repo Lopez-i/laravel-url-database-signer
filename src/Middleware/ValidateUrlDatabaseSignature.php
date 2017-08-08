@@ -6,7 +6,7 @@ use lopez_i\UrlDatabaseSigner\UrlDatabaseSigner;
 use Closure;
 use Session;
 
-class ValidateUrlSignature
+class ValidateUrlDatabaseSignature
 {
     /**
      * Handle an incoming request.
