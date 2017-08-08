@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Library;
+namespace lopez_i;
 
-use App\Http\Controllers\Controller;
-use App\Jobs\RemoveExpiredSignedUrl;
-use App\Models\SignedUrls;
+use lopez_i\Jobs\RemoveExpiredSignedUrl;
+use lopez_i\Model\SignedUrls;
 use ArrayIterator;
 use Carbon\Carbon;
 use Crypt;

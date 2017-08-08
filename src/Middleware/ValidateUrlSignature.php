@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace lopez_i\Middleware;
 
-use App\Http\Controllers\Library\UrlSigner;
-use Auth;
+use lopez_i\UrlSigner;
 use Closure;
 use Session;
 
@@ -19,16 +18,14 @@ class ValidateUrlSignature
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() || !Session::get('id'))
-            abort(404);
-        else
-        {
-            if (!($urlIsSigned = UrlSigner::validateUrl($request, Session::get('id'))))
+        if (!($urlIsSigned = UrlSigner::validateUrl($request, Session::get('id'))))
             {
                 UrlSigner::invalidate(Session::get('id'), $request);
-                return redirect(route('connection-session-expired'));
+                if (config('redirect') == '')
+                    abort(404);
+                else
+                    return redirect('/' . config('redirect'));
             }
-        }
         return $next($request);
     }
 }
