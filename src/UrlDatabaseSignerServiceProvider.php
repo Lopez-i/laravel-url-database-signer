@@ -4,6 +4,7 @@ namespace lopez_i\UrlDatabaseSigner;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Foundation\Application;
+use File;
 
 class UrlDatabaseSignerServiceProvider extends ServiceProvider
 {
