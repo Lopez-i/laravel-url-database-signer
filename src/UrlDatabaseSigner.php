@@ -1,9 +1,9 @@
 <?php
 
-namespace lopez_i\UrlSigner;
+namespace lopez_i\UrlDatabaseSigner;
 
-use lopez_i\UrlSigner\Jobs\RemoveExpiredSignedUrl;
-use lopez_i\UrlSigner\Model\SignedUrls;
+use lopez_i\UrlDatabaseSigner\Jobs\RemoveExpiredSignedUrl;
+use lopez_i\UrlDatabaseSigner\Model\SignedUrls;
 use ArrayIterator;
 use Carbon\Carbon;
 use Crypt;

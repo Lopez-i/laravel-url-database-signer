@@ -1,5 +1,5 @@
 <?php
-namespace lopez_i\UrlSigner;
+namespace lopez_i\UrlDatabaseSigner;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;

@@ -1,8 +1,8 @@
 <?php
 
-namespace lopez_i\UrlSigner\Middleware;
+namespace lopez_i\UrlDatabaseSigner\Middleware;
 
-use lopez_i\UrlSigner\UrlDatabaseSigner;
+use lopez_i\UrlDatabaseSigner\UrlDatabaseSigner;
 use Closure;
 use Session;
 

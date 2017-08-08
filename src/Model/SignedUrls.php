@@ -1,6 +1,6 @@
 <?php
 
-namespace lopez_i\UrlSigner\Model;
+namespace lopez_i\UrlDatabaseSigner\Model;
 
 use Illuminate\Database\Eloquent\Model;
 

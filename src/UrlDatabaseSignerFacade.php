@@ -1,6 +1,6 @@
 <?php
 
-namespace lopez_i\UrlSigner;
+namespace lopez_i\UrlDatabaseSigner;
 
 use Illuminate\Support\Facades\Facade;
 

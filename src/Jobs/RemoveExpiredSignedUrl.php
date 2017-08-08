@@ -1,8 +1,8 @@
 <?php
 
-namespace lopez_i\UrlSigner\Jobs;
+namespace lopez_i\UrlDatabaseSigner\Jobs;
 
-use lopez_i\UrlSigner\UrlDatabaseSigner;
+use lopez_i\UrlDatabaseSigner\UrlDatabaseSigner;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
