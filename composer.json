@@ -1,0 +1,20 @@
+{
+  "name": "lopez-i/laravel-url-database-signer",
+  "description": "Laravel implementation of signed urls",
+  "keywords": [
+    "laravel-url-database-signer"
+  ],
+  "homepage": "https://github.com/Lopez-i/laravel-url-database-signer",
+  "license": "GNU General Public License v3.0",
+  "require": {
+    "php": "^7.0",
+    "lopez-i/laravel-url-database-signer": "^1.0.1",
+    "league/uri": "^5.0",
+    "laravel/framework": "5.4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "lopez-i\\src": "src"
+    }
+  }
+}
