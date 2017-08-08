@@ -2,7 +2,7 @@
 
 namespace lopez_i\UrlSigner\Middleware;
 
-use lopez_i\UrlSigner\UrlSigner;
+use lopez_i\UrlSigner\UrlDatabaseSigner;
 use Closure;
 use Session;
 
@@ -18,9 +18,9 @@ class ValidateUrlSignature
      */
     public function handle($request, Closure $next)
     {
-        if (!($urlIsSigned = UrlSigner::validateUrl($request, Session::get('id'))))
+        if (!($urlIsSigned = UrlDatabaseSigner::validateUrl($request, Session::get('id'))))
             {
-                UrlSigner::invalidate(Session::get('id'), $request);
+                UrlDatabaseSigner::invalidate(Session::get('id'), $request);
                 if (config('redirect') == '')
                     abort(404);
                 else

@@ -16,7 +16,7 @@ use Ramsey\Uuid\Uuid;
  * Class UrlSigner
  * @package App\Http\Controllers\Library
  */
-class UrlSigner
+class UrlDatabaseSigner
 {
     /**
      * @var string

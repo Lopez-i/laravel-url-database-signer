@@ -1,6 +1,6 @@
 {
   "name": "lopez-i/laravel-url-database-signer",
-  "description": "Laravel implementation of signed urls",
+  "description": "Laravel implementation of signed database urls",
   "keywords": [
     "laravel-url-database-signer",
     "lopez_i"
@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "lopez_i\\UrlSigner\\": "src/"
+      "lopez_i\\UrlDatabaseSigner\\": "src/"
     }
   }
 }

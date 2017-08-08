@@ -2,7 +2,7 @@
 
 namespace lopez_i\UrlSigner\Jobs;
 
-use lopez_i\UrlSigner\UrlSigner;
+use lopez_i\UrlSigner\UrlDatabaseSigner;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -45,6 +45,6 @@ class RemoveExpiredSignedUrl implements ShouldQueue
      */
     public function handle()
     {
-        UrlSigner::removeExpiredSignedUrl($this->user_uuid, $this->request_type);
+        UrlDatabaseSigner::removeExpiredSignedUrl($this->user_uuid, $this->request_type);
     }
 }
