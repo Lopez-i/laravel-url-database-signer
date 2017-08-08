@@ -12,15 +12,24 @@ class UrlDatabaseSignerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $source_config = realpath(__DIR__.'/../config/url-database-signer.php');
-        $source_db = realpath(__DIR__.'/../Migration/2017_07_22_144134_create_signed_urls_table.php');
-        $source_middleware = realpath(__DIR__.'/../Middleware/ValidateUrlSignature.php');
-        $this->publishes(
-            [
-                $source_config => config_path('url-database-signer.php'),
-                $source_db => database_path('2017_07_22_144134_create_signed_urls_table.php'),
-                $source_middleware => base_path('./app/Http/Middleware')
-            ]);
-        $this->mergeConfigFrom($source_config, 'url-database-signer.php');
+        if ($this->app->runningInConsole())
+        {
+            $source_config = realpath(__DIR__.'/../config/url-database-signer.php');
+            $source_db = realpath(__DIR__.'/../Migration/2017_07_22_144134_create_signed_urls_table.php');
+            $source_middleware = realpath(__DIR__.'/../Middleware/ValidateUrlSignature.php');
+            $this->publishes(
+                [
+                    $source_config => config_path('url-database-signer.php'),
+                ]);
+            $this->publishes(
+                [
+                    $source_db => database_path('2017_07_22_144134_create_signed_urls_table.php'),
+                ]);
+            $this->publishes(
+                [
+                    $source_middleware => base_path('./app/Http/Middleware')
+                ]);
+            $this->mergeConfigFrom($source_config, 'url-database-signer.php');
+        }
     }
 }
