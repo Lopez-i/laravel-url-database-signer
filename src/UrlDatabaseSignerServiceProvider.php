@@ -16,18 +16,18 @@ class UrlDatabaseSignerServiceProvider extends ServiceProvider
         {
             $source_config = __DIR__.'/config/url-database-signer.php';
             $source_db = __DIR__.'/Migration/2017_07_22_144134_create_signed_urls_table.php';
-            $source_middleware = __DIR__.'/Middleware/ValidateUrlSignature.php';
+            $source_middleware = __DIR__.'/Middleware/ValidateUrlDatabaseSignature.php';
             $this->publishes(
                 [
                     $source_config => config_path('url-database-signer.php'),
                 ]);
             $this->publishes(
                 [
-                    $source_db => database_path('2017_07_22_144134_create_signed_urls_table.php'),
+                    $source_db => base_path('./database/migrations/2017_07_22_144134_create_signed_urls_table.php'),
                 ]);
             $this->publishes(
                 [
-                    $source_middleware => base_path('./app/Http/Middleware')
+                    $source_middleware => base_path('./app/Http/Middleware/ValidateUrlDatabaseSignature.php')
                 ]);
             $this->mergeConfigFrom($source_config, 'url-database-signer.php');
         }
