@@ -14,9 +14,9 @@ class UrlDatabaseSignerServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole())
         {
-            $source_config = __DIR__.'/../config/url-database-signer.php';
-            $source_db = __DIR__.'/../Migration/2017_07_22_144134_create_signed_urls_table.php';
-            $source_middleware = __DIR__.'/../Middleware/ValidateUrlSignature.php';
+            $source_config = __DIR__.'/config/url-database-signer.php';
+            $source_db = __DIR__.'/Migration/2017_07_22_144134_create_signed_urls_table.php';
+            $source_middleware = __DIR__.'/Middleware/ValidateUrlSignature.php';
             $this->publishes(
                 [
                     $source_config => $this->app->config_path('url-database-signer.php'),
