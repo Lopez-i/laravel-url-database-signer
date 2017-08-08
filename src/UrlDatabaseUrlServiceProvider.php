@@ -5,7 +5,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Foundation\Application;
 
-class UrlSignerServiceProvider extends ServiceProvider
+class UrlDatabaseSignerServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application events.
