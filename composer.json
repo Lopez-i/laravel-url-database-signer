@@ -9,7 +9,6 @@
   "license": "GNU General Public License v3.0",
   "require": {
     "php": "^7.0",
-    "lopez-i/laravel-url-database-signer": "^1.0",
     "league/uri": "^5.0",
     "ramsey/uuid": "^3.0",
     "illuminate/database": "5.4.*",
